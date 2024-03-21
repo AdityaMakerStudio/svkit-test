@@ -49,8 +49,8 @@
 <main class="container">
 	<div>Tables</div>
 
-	<div class="flex w-full flex-col items-center justify-center border border-white">
-		<Table.Root>
+	<div class="flex w-full flex-col items-center justify-center border border-black">
+		<Table.Root class="">
 			<Table.Caption>All Invoices</Table.Caption>
 		</Table.Root>
 		<Table.Header>
@@ -63,8 +63,17 @@
 			<Table.Body>
 				{#each invoices as invoice, i (i)}
 					<Table.Row>
-						<Table.Cell>
+						<Table.Cell class="font-medium">
 							{invoice.invoice}
+						</Table.Cell>
+						<Table.Cell>
+							{invoice.paymentStatus}
+						</Table.Cell>
+						<Table.Cell>
+							{invoice.paymentMethod}
+						</Table.Cell>
+						<Table.Cell class="text-right">
+							{invoice.totalAmount}
 						</Table.Cell>
 					</Table.Row>
 				{/each}
@@ -83,6 +92,6 @@
 		align-items: center;
 		width: 60rem;
 		margin-top: 2rem;
-		background-color: black;
+		background-color: white;
 	}
 </style>
